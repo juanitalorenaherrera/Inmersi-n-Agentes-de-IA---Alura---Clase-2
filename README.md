@@ -74,8 +74,8 @@ Ejemplos
 
 📂 Estructura del proyecto
 .
-├── Inmersión_Agentes_de_IA_Alura_Clase_2_+3_Orli.ipynb
-├── Inmersión_Agentes_de_IA_Alura_Clase_2_Orli.ipynb
+├── Inmersión_Agentes_de_IA_Alura_Clase_2 Y 3
+├── Inmersión_Agentes_de_IA_Alura_Clase2
 ├── README.md
 └── LICENSE
 ⚙️ Tecnologías utilizadas
