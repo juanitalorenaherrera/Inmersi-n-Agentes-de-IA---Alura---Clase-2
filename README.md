@@ -1,182 +1,140 @@
-# 🤖 Inmersión en Agentes de IA — Clase 2
+🤖 Inmersión en Agentes de IA — RAG & Agente Autónomo
 
-Repositorio con un notebook de trabajo para explorar la construcción de agentes de IA usando embeddings, búsqueda vectorial y modelos generativos.
+Proyecto práctico donde evoluciono desde un sistema RAG clásico hasta un agente capaz de decidir cómo responder según el contexto.
 
----
+No es solo consulta de documentos… es inteligencia aplicada 🧠⚡
 
-## 🧠 ¿Cómo funciona el sistema?
+🧠 ¿Qué hace este proyecto?
 
-Este proyecto implementa un pipeline RAG:
+Este repositorio implementa un sistema de IA que:
 
-1. 📄 Carga de PDFs
-2. ✂️ División en fragmentos (chunking)
-3. 🔍 Generación de embeddings
-4. ⚡ Almacenamiento en FAISS
-5. 📚 Recuperación de contexto relevante
-6. 🤖 Generación de respuestas con LLM
+Procesa documentos (PDFs)
 
----
+Genera embeddings semánticos
 
-## 📂 Contenido
+Almacena información en un vector store (FAISS)
 
-```bash id="r9t8e2"
+Recupera contexto relevante
+
+Genera respuestas con modelos LLM
+
+Decide dinámicamente entre usar datos internos o información web
+
+🚀 Evolución del sistema
+🔹 Clase 2 — RAG (Retrieval-Augmented Generation)
+Datos → Embeddings → Vector Store → Retrieval → LLM → Respuesta
+Pipeline base:
+
+Incluye:
+
+📄 Carga de PDFs
+
+✂️ Chunking (fragmentación de texto)
+
+🔍 Generación de embeddings
+
+⚡ Almacenamiento en FAISS
+
+📚 Recuperación de contexto
+
+🤖 Generación con LLM
+
+👉 Resultado: un sistema que responde usando conocimiento interno
+
+🔹 Clase 3 — Agente Inteligente
+
+El sistema evoluciona a un agente que toma decisiones:
+
+Pregunta → Clasificación → (RAG 🧠 | Web 🌐) → Contexto → LLM → Respuesta
+
+Ahora el modelo:
+
+Analiza la intención de la pregunta
+
+Decide la mejor fuente de información
+
+Combina múltiples entradas
+
+👉 Resultado: un agente más flexible, preciso y útil
+
+🧭 Arquitectura del agente
+🧠 Lógica de decisión
+
+El agente clasifica cada pregunta:
+
+📄 RAG → si la información está en los documentos
+
+🌐 Web → si requiere conocimiento externo
+
+Ejemplos
+
+“¿Dónde se concentró el mix de productos?” → RAG
+
+“¿Cuántos mundiales tiene Brasil?” → Web
+
+📂 Estructura del proyecto
 .
 ├── Inmersión_Agentes_de_IA_Alura_Clase_2_+3_Orli.ipynb
 ├── Inmersión_Agentes_de_IA_Alura_Clase_2_Orli.ipynb
 ├── README.md
 └── LICENSE
-```
+⚙️ Tecnologías utilizadas
 
----
+LangChain
 
-## 🧠 Descripción
+FAISS
 
-El proyecto está centrado en un único notebook ejecutado en Google Colab.
-Incluye experimentación con:
+Google Gemini
 
-* 🔍 Generación de embeddings
-* ⚡ Creación de vector stores (FAISS)
-* 📚 Búsqueda semántica
-* 🤖 Integración con APIs de modelos
+SerpAPI
 
----
+LangGraph
 
-## ⚙️ Requisitos
+🛠️ Requisitos
 
-* 🐍 Python 3.10+
-* 📓 Cuenta en Google Colab (recomendado)
-* 🔑 API Key para el proveedor de embeddings (si aplica)
-  * Google Gemini
-  * SerpAPI 
+Python 3.10+
 
----
+Google Colab (recomendado)
 
-## 🧩 Tecnologías utilizadas
+API Keys:
 
-* LangChain
-* FAISS
-* Google Gemini
-* SerpAPI
-* LangGraph
+Google Gemini
 
----
+SerpAPI
 
-## 🚀 Uso
-
-1. Clonar el repositorio:
-
-```bash id="t2v7hk"
+▶️ Uso
 git clone https://github.com/Orliluq/Inmersion_Agentes_de_IA_Alura_Clase_2.git
 cd Inmersion_Agentes_de_IA_Alura_Clase_2
-```
 
-2. 📂 Abrir el notebook en Colab o entorno local
+Abre el notebook en Colab
 
-3. ▶️ Ejecutar las celdas en orden
+Ejecuta las celdas en orden
 
----
+Realiza tus propias consultas
 
-## 🔄 Flujo del sistema clase 2
+⚠️ Consideraciones
 
-Datos → Embeddings → **Vector Store → Retrieval** → LLM → Respuesta
+Puede haber límites de uso en APIs (errores 429)
 
----
+Se recomienda trabajar con datasets pequeños en pruebas
 
-# 🤖 Inmersión en Agentes de IA — Clase 3
+Para producción: usar embeddings locales o planes pagos
 
----
+🎯 ¿Qué demuestra este proyecto?
 
-## 🧠 ¿Cómo funciona el sistema?
+Implementación de RAG real
 
-Este proyecto implementa un pipeline RAG extendido con capacidad de decisión:
+Uso de búsqueda semántica
 
-1. 📄 Carga de PDFs  
-2. ✂️ División en fragmentos (chunking)  
-3. 🔍 Generación de embeddings  
-4. ⚡ Almacenamiento en FAISS  
-5. 📚 Recuperación de contexto relevante  
-6. 🤖 Generación de respuestas con LLM  
-7. 🌐 Integración con búsqueda web  
-8. 🧭 Selección automática de fuente (RAG o Web)  
+Integración con APIs externas
 
----
+Diseño de agentes con toma de decisiones
 
-## 🧠 Arquitectura del agente
+Arquitectura moderna de sistemas de IA
 
-El sistema implementa un agente híbrido que decide dinámicamente cómo responder:
-
-```mermaid
-flowchart TD
-
-A[Usuario] --> B[Agente]
-
-B --> C{¿Fuente?}
-
-C -->|RAG| D[Buscar en PDFs]
-C -->|Web| E[Buscar en Internet]
-
-D --> F[FAISS Vector Store]
-F --> G[Contexto relevante]
-
-E --> H[Resultados Web]
-
-G --> I[LLM - Gemini]
-H --> I
-
-I --> J[Respuesta en Markdown]
-```
-
-## 🔄 Flujo del sistema clase 3
-
-Pregunta → Clasificación → **(RAG 🧠 | Web 🌐)** → Contexto → LLM → Respuesta
-
----
-
-## 🧠 Lógica del agente
-
-El agente analiza cada pregunta y decide:
-* 📄 RAG → si la pregunta está relacionada con los documentos cargados
-* 🌐 Web → si requiere información externa o general
-
-**Esto permite:**
-* Mayor precisión en datos internos
-* Mayor cobertura en preguntas abiertas
-
----
-
-## 🎯 Ejemplos
-
-**Pregunta:** "¿Dónde se concentró el mix de productos?"
-→ Usa RAG (documentos internos)
-
-**Pregunta:** "¿Cuántos mundiales tiene Brasil?"
-→ Usa Web (información general)
-
----
-
-## 📌 Resultado
-
-El sistema evoluciona de un buscador de documentos a un agente inteligente que:
-* Decide cómo responder
-* Combina múltiples fuentes
-* Genera respuestas estructuradas
-
----
-
-## ⚠️ Notas
-
-* 🚫 El procesamiento de embeddings puede estar limitado por cuotas del proveedor (ej: errores 429).
-* ✂️ Se recomienda trabajar con subconjuntos de datos durante pruebas.
-* 🧠 Para uso intensivo, considerar embeddings locales o planes pagos.
-
----
-
-## 📜 Licencia
+📜 Licencia
 
 MIT
 
----
-
-## ✨ Autor
-
-Construido por Orli 🧠⚡
+✨ Autor
+JUANITA HERRERA
