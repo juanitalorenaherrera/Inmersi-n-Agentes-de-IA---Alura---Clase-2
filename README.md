@@ -1,47 +1,46 @@
-🤖 Inmersión en Agentes de IA — RAG & Agente Autónomo
+# 🤖 Inmersión en Agentes de IA — RAG & Agente Autónomo
 
-Proyecto práctico donde evoluciono desde un sistema RAG clásico hasta un agente capaz de decidir cómo responder según el contexto.
+Proyecto práctico donde evoluciono desde un sistema RAG clásico hasta un agente capaz de **decidir cómo responder** según el contexto.
 
 No es solo consulta de documentos… es inteligencia aplicada 🧠⚡
 
-🧠 ¿Qué hace este proyecto?
+---
+
+## 🧠 ¿Qué hace este proyecto?
 
 Este repositorio implementa un sistema de IA que:
 
-Procesa documentos (PDFs)
+- Procesa documentos (PDFs)
+- Genera embeddings semánticos
+- Almacena información en un vector store (FAISS)
+- Recupera contexto relevante
+- Genera respuestas con modelos LLM
+- Decide dinámicamente entre usar **datos internos o información web**
 
-Genera embeddings semánticos
+---
 
-Almacena información en un vector store (FAISS)
+## 🚀 Evolución del sistema
 
-Recupera contexto relevante
+### 🔹 Clase 2 — RAG (Retrieval-Augmented Generation)
 
-Genera respuestas con modelos LLM
-
-Decide dinámicamente entre usar datos internos o información web
-
-🚀 Evolución del sistema
-🔹 Clase 2 — RAG (Retrieval-Augmented Generation)
-Datos → Embeddings → Vector Store → Retrieval → LLM → Respuesta
 Pipeline base:
+
+Datos → Embeddings → Vector Store → Retrieval → LLM → Respuesta
 
 Incluye:
 
-📄 Carga de PDFs
-
-✂️ Chunking (fragmentación de texto)
-
-🔍 Generación de embeddings
-
-⚡ Almacenamiento en FAISS
-
-📚 Recuperación de contexto
-
-🤖 Generación con LLM
+- 📄 Carga de PDFs  
+- ✂️ Chunking (fragmentación de texto)  
+- 🔍 Generación de embeddings  
+- ⚡ Almacenamiento en FAISS  
+- 📚 Recuperación de contexto  
+- 🤖 Generación con LLM  
 
 👉 Resultado: un sistema que responde usando conocimiento interno
 
-🔹 Clase 3 — Agente Inteligente
+---
+
+### 🔹 Clase 3 — Agente Inteligente
 
 El sistema evoluciona a un agente que toma decisiones:
 
@@ -49,15 +48,36 @@ Pregunta → Clasificación → (RAG 🧠 | Web 🌐) → Contexto → LLM → R
 
 Ahora el modelo:
 
-Analiza la intención de la pregunta
-
-Decide la mejor fuente de información
-
-Combina múltiples entradas
+- Analiza la intención de la pregunta  
+- Decide la mejor fuente de información  
+- Combina múltiples entradas  
 
 👉 Resultado: un agente más flexible, preciso y útil
 
-🧭 Arquitectura del agente
+---
+
+## 🧭 Arquitectura del agente
+
+```mermaid
+flowchart TD
+
+A[Usuario] --> B[Agente]
+
+B --> C{¿Fuente?}
+
+C -->|RAG| D[Buscar en PDFs]
+C -->|Web| E[Buscar en Internet]
+
+D --> F[FAISS Vector Store]
+F --> G[Contexto relevante]
+
+E --> H[Resultados Web]
+
+G --> I[LLM - Gemini]
+H --> I
+
+I --> J[Respuesta]
+
 🧠 Lógica de decisión
 
 El agente clasifica cada pregunta:
@@ -72,10 +92,9 @@ Ejemplos
 
 “¿Cuántos mundiales tiene Brasil?” → Web
 
-📂 Estructura del proyecto
 .
-├── Inmersión_Agentes_de_IA_Alura_Clase_2 Y 3
-├── Inmersión_Agentes_de_IA_Alura_Clase2
+├── Inmersión_Agentes_de_IA_Alura_Clase_2_+3_Orli.ipynb
+├── Inmersión_Agentes_de_IA_Alura_Clase_2_Orli.ipynb
 ├── README.md
 └── LICENSE
 ⚙️ Tecnologías utilizadas
@@ -101,6 +120,10 @@ API Keys:
 Google Gemini
 
 SerpAPI
+
+▶️ Uso
+git clone https://github.com/Orliluq/Inmersion_Agentes_de_IA_Alura_Clase_2.git
+cd Inmersion_Agentes_de_IA_Alura_Clase_2
 
 Abre el notebook en Colab
 
@@ -133,4 +156,7 @@ Arquitectura moderna de sistemas de IA
 MIT
 
 ✨ Autor
-JUANITA HERRERA
+
+Juanita Lorena Herrera Herrera 🧠⚡
+Desarrolladora Web & Software | Explorando el futuro de la inteligencia artificial
+
