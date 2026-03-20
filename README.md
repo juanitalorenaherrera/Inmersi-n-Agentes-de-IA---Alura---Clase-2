@@ -81,10 +81,6 @@ Google Gemini
 
 SerpAPI
 
-▶️ Uso
-git clone https://github.com/Orliluq/Inmersion_Agentes_de_IA_Alura_Clase_2.git
-cd Inmersion_Agentes_de_IA_Alura_Clase_2
-
 Abre el notebook en Colab
 
 Ejecuta las celdas en orden
