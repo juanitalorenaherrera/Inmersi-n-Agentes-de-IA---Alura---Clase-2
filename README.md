@@ -58,28 +58,6 @@ Ahora el modelo:
 
 ## 🧭 Arquitectura del agente
 
-```mermaid
-
-🧠 Lógica de decisión
-
-El agente clasifica cada pregunta:
-
-📄 RAG → si la información está en los documentos
-
-🌐 Web → si requiere conocimiento externo
-
-Ejemplos
-
-“¿Dónde se concentró el mix de productos?” → RAG
-
-“¿Cuántos mundiales tiene Brasil?” → Web
-
-.
-├── Inmersión_Agentes_de_IA_Alura_Clase_2_+3_Orli.ipynb
-├── Inmersión_Agentes_de_IA_Alura_Clase_2_Orli.ipynb
-├── README.md
-└── LICENSE
-⚙️ Tecnologías utilizadas
 
 LangChain
 
