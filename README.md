@@ -59,24 +59,6 @@ Ahora el modelo:
 ## 🧭 Arquitectura del agente
 
 ```mermaid
-flowchart TD
-
-A[Usuario] --> B[Agente]
-
-B --> C{¿Fuente?}
-
-C -->|RAG| D[Buscar en PDFs]
-C -->|Web| E[Buscar en Internet]
-
-D --> F[FAISS Vector Store]
-F --> G[Contexto relevante]
-
-E --> H[Resultados Web]
-
-G --> I[LLM - Gemini]
-H --> I
-
-I --> J[Respuesta]
 
 🧠 Lógica de decisión
 
